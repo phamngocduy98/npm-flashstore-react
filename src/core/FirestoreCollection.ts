@@ -62,13 +62,13 @@ export class FirestoreCollection<D extends DocumentData> extends EventEmitter.Ev
     async create(docId: string | undefined, doc: D) {
         let newDocRef = docId ? this.ref.doc(docId) : this.ref.doc();
         doc._id = newDocRef.id;
-        await newDocRef.set(doc.toPureObject());
+        await newDocRef.set(DocumentData.toFirestoreUpdatableObject(doc));
         return this.document(newDocRef.id);
     }
 
     createInBatch(batch: firebase.firestore.WriteBatch, docId: string | undefined, doc: D) {
         let newDocRef = docId ? this.ref.doc(docId) : this.ref.doc();
-        batch.set(newDocRef, doc.toPureObject());
+        batch.set(newDocRef, DocumentData.toFirestoreUpdatableObject(doc));
         return newDocRef;
     }
 
