@@ -2,7 +2,7 @@
   "name": "@phamngocduy98/flashstore-react",
   "version": "0.0.1a",
   "description": "A firebase cloud firestore library that making it easier to CRUD data with typescript in react client",
-  "repository": "https://github.com/phamngocduy98/node_flashstore-react",
+  "repository": "https://github.com/phamngocduy98/npm-flashstore-react",
   "author": "Pham Ngoc Duy",
   "license": "MIT",
   "main": "./build/index.js",

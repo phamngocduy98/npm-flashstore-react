@@ -1,16 +1,16 @@
-# FlashStore
-![npm](https://img.shields.io/npm/v/@phamngocduy98/flashstore)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/phamngocduy98/node_flashstore_library/Coverage%20check)
-[![codecov](https://codecov.io/gh/phamngocduy98/node_flashstore_library/branch/master/graph/badge.svg)](https://codecov.io/gh/phamngocduy98/node_flashstore_library)
-![npm](https://img.shields.io/npm/dt/@phamngocduy98/flashstore)
-![node-lts (scoped)](https://img.shields.io/node/v-lts/@phamngocduy98/flashstore)
-![npm peer dependency version (scoped)](https://img.shields.io/npm/dependency-version/@phamngocduy98/flashstore/dev/typescript)
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/phamngocduy98/node_flashstore_library/firebase-admin)
+# React flashstore
+![npm](https://img.shields.io/npm/v/@phamngocduy98/flashstore-react-react)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/phamngocduy98/npm-flashstore-react/Coverage%20check)
+[![codecov](https://codecov.io/gh/phamngocduy98/npm-flashstore-react/branch/master/graph/badge.svg)](https://codecov.io/gh/phamngocduy98/npm-flashstore-react)
+![npm](https://img.shields.io/npm/dt/@phamngocduy98/flashstore-react-react)
+![node-lts (scoped)](https://img.shields.io/node/v-lts/@phamngocduy98/flashstore-react-react)
+![npm peer dependency version (scoped)](https://img.shields.io/npm/dependency-version/@phamngocduy98/flashstore-react-react/dev/typescript)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/phamngocduy98/npm-flashstore-react/firebase)
 
 A firebase firestore library that making it easier to CRUD data with typescript
 
 ```
-npm i @phamngocduy98/flashstore
+npm i @phamngocduy98/flashstore-react
 ```
 
 ## How to use
@@ -20,7 +20,7 @@ npm i @phamngocduy98/flashstore
 Define properties of your document by extending `DocumentData` class
 
 ```typescript
-import {DocumentData} from "@phamngocduy98/flashstore";
+import {DocumentData} from "@phamngocduy98/flashstore-react";
 
 export class User extends DocumentData {
     constructor(public name: string, public avatarUrl: string) {
@@ -34,7 +34,7 @@ export class User extends DocumentData {
 For example, you have a root collection whose name is `users`
 
 ```typescript
-import {Database, Collection, FirestoreCollection} from "@phamngocduy98/flashstore";
+import {Database, Collection, FirestoreCollection} from "@phamngocduy98/flashstore-react";
 import {User} from ".";
 
 export class MyDatabase extends Database {
@@ -49,7 +49,7 @@ If you don't define collection's name parameter like `@Collection(User)`, the li
 Subcollection is supported too. If you have a subcollection `wells` inside a `Village` document, then your Village class should look like this:
 
 ```typescript
-import {DocumentData, Collection, FirestoreCollection} from "@phamngocduy98/flashstore";
+import {DocumentData, Collection, FirestoreCollection} from "@phamngocduy98/flashstore-react";
 import {Well} from "./sample_db/Well";
 
 export class Village extends DocumentData {
@@ -62,7 +62,7 @@ export class Village extends DocumentData {
 
 ```typescript
 import * as admin from "firebase-admin";
-import {FirestoreDocument, FirestoreCollection} from "@phamngocduy98/flashstore";
+import {FirestoreDocument, FirestoreCollection} from "@phamngocduy98/flashstore-react";
 import {User, MyDatabase} from ".";
 
 admin.initializeApp();
@@ -105,7 +105,7 @@ For now, it's not recommended to define a link to a sub-collection due to its co
 The `owner` is stored as `DocumentReference` in firestore, while you can access it as a true document in Village instance.
 
 ```typescript
-import {FirestoreDocument, LinkFirestoreDocument, DocumentData}  from "@phamngocduy98/flashstore";
+import {FirestoreDocument, LinkFirestoreDocument, DocumentData}  from "@phamngocduy98/flashstore-react";
 import {User} from ".";
 
 export class Village extends DocumentData {
@@ -126,7 +126,7 @@ export class Village extends DocumentData {
 If you only want to read the document:
 
 ```typescript
-import {FirestoreDocument from "@phamngocduy98/flashstore";
+import {FirestoreDocument from "@phamngocduy98/flashstore-react";
 import {User, Village} from ".";
 
 const villageDoc: FirestoreDocument<Village> = db.villages.document("village_id");
@@ -143,7 +143,7 @@ console.log(ownerData.name, ownerData.avatarUrl);
 It can be get via `linkedDocument(propertyName)` method.
 
 ```typescript
-import {FirestoreDocument, FDTracker} from "@phamngocduy98/flashstore";
+import {FirestoreDocument, FDTracker} from "@phamngocduy98/flashstore-react";
 import {User, Village} from ".";
 
 const villageDoc: FirestoreDocument<Village> = db.villages.document("village_id");
@@ -172,7 +172,7 @@ The library supports array of document too. You can use `@LinkFirestoreDocumentA
 So, the completed Village class is shown bellow:
 
 ```typescript
-import {DocumentData, FirestoreDocument, LinkFirestoreDocument, LinkFirestoreDocumentArray} from "@phamngocduy98/flashstore";
+import {DocumentData, FirestoreDocument, LinkFirestoreDocument, LinkFirestoreDocumentArray} from "@phamngocduy98/flashstore-react";
 import {FDUnionArray} from "./FDUnionArray";
 import {User} from ".";
 
@@ -197,7 +197,7 @@ export class Village extends DocumentData {
 If you only want to read the array:
 
 ```typescript
-import {FirestoreDocument, FDArrayTracker} from "@phamngocduy98/flashstore";
+import {FirestoreDocument, FDArrayTracker} from "@phamngocduy98/flashstore-react";
 import {User, Village} from ".";
 
 const villageDoc: FirestoreDocument<Village> = db.villages.document("village_id");
@@ -225,7 +225,7 @@ await village!.members.spliceDB(0, 1);
 It can be get via `linkedArray(propertyName)` method.
 
 ```typescript
-import {FirestoreDocument, FDArrayTracker} from "@phamngocduy98/flashstore";
+import {FirestoreDocument, FDArrayTracker} from "@phamngocduy98/flashstore-react";
 import {User, Village} from ".";
 
 const villageDoc: FirestoreDocument<Village> = db.villages.document("village_id");
@@ -256,7 +256,7 @@ Use `@RealtimeCollection` decorator instead of `@Collection` decorator to define
 You can add listeners to listen these changes too.
 
 ```typescript
-import {OnCollectionChangedListener, RealtimeFirestoreDocument} from "@phamngocduy98/flashstore";
+import {OnCollectionChangedListener, RealtimeFirestoreDocument} from "@phamngocduy98/flashstore-react";
 
 const listener = new OnCollectionChangedListener();
 listener.onDocumentAdded = (doc: RealtimeFirestoreDocument<D>) => {
@@ -276,7 +276,7 @@ db.anyRealtimeCollection.addOnCollectionChangedListener(listener);
 `RealtimeFirestoreDocument` is created be `RealtimeFirestoreCollection. Its data is always up to date with the server in realtime. It support listener too.`
 
 ```typescript
-import {OnValueChangedListener, RealtimeFirestoreDocument} from "@phamngocduy98/flashstore";
+import {OnValueChangedListener, RealtimeFirestoreDocument} from "@phamngocduy98/flashstore-react";
 
 const anyRealtimeDocument: RealtimeFirestoreDocument<D> = db.anyRealtimeCollection.document("document_id");
 
