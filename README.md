@@ -1,11 +1,12 @@
 # React flashstore
-![npm](https://img.shields.io/npm/v/@phamngocduy98/flashstore-react-react)
+![npm](https://img.shields.io/npm/v/@phamngocduy98/flashstore-react)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/phamngocduy98/npm-flashstore-react/Coverage%20check)
 [![codecov](https://codecov.io/gh/phamngocduy98/npm-flashstore-react/branch/master/graph/badge.svg)](https://codecov.io/gh/phamngocduy98/npm-flashstore-react)
-![npm](https://img.shields.io/npm/dt/@phamngocduy98/flashstore-react-react)
-![node-lts (scoped)](https://img.shields.io/node/v-lts/@phamngocduy98/flashstore-react-react)
-![npm peer dependency version (scoped)](https://img.shields.io/npm/dependency-version/@phamngocduy98/flashstore-react-react/dev/typescript)
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/phamngocduy98/npm-flashstore-react/firebase)
+![npm](https://img.shields.io/npm/dt/@phamngocduy98/flashstore-react)
+![node-lts (scoped)](https://img.shields.io/node/v-lts/@phamngocduy98/flashstore-react)
+![typescript](https://img.shields.io/npm/dependency-version/@phamngocduy98/flashstore-react/dev/typescript)
+![firebase](https://img.shields.io/github/package-json/dependency-version/phamngocduy98/npm-flashstore-react/firebase)
+![react](https://img.shields.io/github/package-json/dependency-version/phamngocduy98/npm-flashstore-react/react)
 
 A firebase firestore library that making it easier to CRUD data with typescript
 

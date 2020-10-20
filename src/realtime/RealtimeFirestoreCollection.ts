@@ -6,7 +6,6 @@ import {
     DocumentData,
     DocumentDataConstructor,
     FirestoreCollection,
-    FirestoreDocument,
     ICollectionParent,
     RealtimeFirestoreDocument
 } from "../internal";

@@ -4,9 +4,9 @@ import {
     Database,
     DocumentData,
     DocumentDataConstructor,
-    FirestoreCollection,
     FDArrayTracker,
     FDTracker,
+    FirestoreCollection,
     getRegisteredLinkingItems,
     ICollectionParent,
     RealtimeFirestoreCollection
