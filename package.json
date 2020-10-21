@@ -27,7 +27,7 @@
   "dependencies": {
     "@types/react": "^16.9.53",
     "firebase": "^7.19.1",
-    "react": "^16.14.0"
+    "react": "~16.14.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",

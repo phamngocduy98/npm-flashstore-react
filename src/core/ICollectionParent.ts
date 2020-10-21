@@ -15,7 +15,7 @@ interface IAbstractReference {
 
 /**
  * ICollectionParent interface for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export abstract class ICollectionParent extends EventEmitter.EventEmitter {
     private collections: Map<string, FirestoreCollection<any>>;

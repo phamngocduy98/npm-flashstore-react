@@ -4,20 +4,23 @@ import {
     Database,
     DocumentData,
     DocumentDataConstructor,
-    FirestoreCollection,
     FDArrayTracker,
     FDTracker,
+    FirestoreCollection,
     getRegisteredLinkingItems,
     ICollectionParent,
     RealtimeFirestoreCollection
 } from "../internal";
 import {FDUnionArray} from "./FDUnionArray";
+import DocumentReference = firebase.firestore.DocumentReference;
 
 export type FirestoreDocumentConstructor<T extends FirestoreDocument<any>> = {new (...args: any): T};
 
+export type UpdateParams<D> = {[K in keyof D]?: D[K] extends FDUnionArray<infer FD> ? D[K] | FD[] : D[K]} | D;
+
 /**
  * FirestoreDocument class for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export class FirestoreDocument<D extends DocumentData> extends ICollectionParent {
     protected linkingDocArray: Map<string, FDArrayTracker<any>>;
@@ -128,21 +131,15 @@ export class FirestoreDocument<D extends DocumentData> extends ICollectionParent
 
     set(documentData: D) {
         // this._dataValue = documentData;
-        return this.ref.set(documentData.toPureObject());
+        return this.ref.set(DocumentData.toFirestoreUpdatableObject(documentData));
     }
 
-    update(updateParams: {[K in keyof D]?: D[K] | firebase.firestore.FieldValue} | D) {
+    update(updateParams: UpdateParams<D>): Promise<void> {
         this._exists = undefined; // cached data is outed-date after updated, recall get() for new value
-        if (updateParams instanceof DocumentData) {
-            return this.ref.update(updateParams.toPureObject());
-        }
-        return this.ref.update(updateParams);
+        return this.ref.update(DocumentData.toFirestoreUpdatableObject(updateParams));
     }
 
-    updateInBatch(
-        batch: firebase.firestore.WriteBatch,
-        updateParams: {[K in keyof D]?: D[K] | firebase.firestore.FieldValue}
-    ) {
+    updateInBatch(batch: firebase.firestore.WriteBatch, updateParams: Partial<D> | D) {
         this._exists = undefined; // cached data is outed-date after updated, recall get() for new value
         return batch.update(this.ref, updateParams);
     }
