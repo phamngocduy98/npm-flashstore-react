@@ -12,7 +12,7 @@ import {
 
 /**
  * RealtimeFirestoreCollection class for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export class RealtimeFirestoreCollection<D extends DocumentData> extends FirestoreCollection<D> {
     cancelCollectionListener?: () => void;

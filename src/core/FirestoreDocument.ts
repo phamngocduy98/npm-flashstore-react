@@ -20,7 +20,7 @@ export type UpdateParams<D> = {[K in keyof D]?: D[K] extends FDUnionArray<infer 
 
 /**
  * FirestoreDocument class for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export class FirestoreDocument<D extends DocumentData> extends ICollectionParent {
     protected linkingDocArray: Map<string, FDArrayTracker<any>>;

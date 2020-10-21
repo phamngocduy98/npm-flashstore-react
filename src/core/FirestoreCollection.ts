@@ -12,7 +12,7 @@ import {
 
 /**
  * FirestoreCollection class for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export class FirestoreCollection<D extends DocumentData> extends EventEmitter.EventEmitter {
     ref: firebase.firestore.CollectionReference;

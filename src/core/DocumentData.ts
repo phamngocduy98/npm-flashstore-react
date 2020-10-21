@@ -1,6 +1,6 @@
 /**
  * DocumentData class for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 import {firebase, FirestoreDocument, UpdateParams} from "../internal";
 

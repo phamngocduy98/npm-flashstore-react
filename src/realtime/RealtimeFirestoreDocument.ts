@@ -14,7 +14,7 @@ export type RealtimeDocumentConstructor<T extends RealtimeFirestoreDocument<any>
 /**
  * RealtimeFirestoreDocument class for Flashstore Library
  * help make FirestoreDocument to listen realtime update from firestore
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export class RealtimeFirestoreDocument<D extends DocumentData> extends FirestoreDocument<D> {
     cancelListenerRegistration?: () => any;

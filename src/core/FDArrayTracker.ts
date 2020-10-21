@@ -7,7 +7,7 @@ import {FDUnionArray} from "./FDUnionArray";
 
 /**
  * FDArrayTracker class for Flashstore Library
- * https://github.com/phamngocduy98/node_flashstore_library
+ * https://github.com/phamngocduy98/npm-flashstore-core
  */
 export class FDArrayTracker<D extends DocumentData> extends EventEmitter.EventEmitter {
     private _currentIdList?: string[];
