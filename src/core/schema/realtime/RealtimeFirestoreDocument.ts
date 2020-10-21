@@ -1,13 +1,12 @@
 import {
+    firebase,
     Database,
     DocumentData,
     DocumentDataConstructor,
     FirestoreCollection,
     FirestoreDocument,
     RealtimeFirestoreCollection
-} from "../internal";
-
-import {firebase} from "../FirebaseImport";
+} from "../../internal";
 
 export type RealtimeDocumentConstructor<T extends RealtimeFirestoreDocument<any>> = {new (...args: any): T};
 

@@ -1,7 +1,7 @@
-import {firebase} from "../FirebaseImport";
 import EventEmitter from "events";
 
 import {
+    firebase,
     Database,
     DocumentData,
     DocumentDataConstructor,

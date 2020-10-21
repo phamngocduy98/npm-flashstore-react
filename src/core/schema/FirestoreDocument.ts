@@ -1,6 +1,5 @@
-import {firebase} from "../FirebaseImport";
-
 import {
+    firebase,
     Database,
     DocumentData,
     DocumentDataConstructor,
@@ -9,10 +8,9 @@ import {
     FirestoreCollection,
     getRegisteredLinkingItems,
     ICollectionParent,
-    RealtimeFirestoreCollection
+    RealtimeFirestoreCollection,
+    FDUnionArray
 } from "../internal";
-import {FDUnionArray} from "./FDUnionArray";
-import DocumentReference = firebase.firestore.DocumentReference;
 
 export type FirestoreDocumentConstructor<T extends FirestoreDocument<any>> = {new (...args: any): T};
 

@@ -49,11 +49,11 @@ export function Collection(dataConstructor: DocumentDataConstructor<any>, collec
     };
 }
 
-/*******************
+/** *****************
  * LINKING FEATURE
- ******************/
+ **************** **/
 
-const LinkingMetadataKey = Symbol("LinkingMetadataKey");
+const REF_METADATA_KEY = Symbol("LinkingMetadataKey");
 
 export interface ILinkingMetadata {
     propertyKey: string;
@@ -62,7 +62,7 @@ export interface ILinkingMetadata {
 }
 
 export function getRegisteredLinkingItems(target: any): ILinkingMetadata[] {
-    return Reflect.getMetadata(LinkingMetadataKey, target) || [];
+    return Reflect.getMetadata(REF_METADATA_KEY, target) || [];
 }
 
 // @FDArray
@@ -75,7 +75,7 @@ export function RefFDUnionArray(collectionPathFromRoot: string) {
             mode: "docRef[]"
         };
         prevLinkedMetadata.push(metaData);
-        Reflect.defineMetadata(LinkingMetadataKey, prevLinkedMetadata, target);
+        Reflect.defineMetadata(REF_METADATA_KEY, prevLinkedMetadata, target);
     };
 }
 
@@ -89,6 +89,6 @@ export function RefFDocument(collectionPathFromRoot: string) {
             mode: "docRef"
         };
         prevLinkedMetadata.push(metaData);
-        Reflect.defineMetadata(LinkingMetadataKey, prevLinkedMetadata, target);
+        Reflect.defineMetadata(REF_METADATA_KEY, prevLinkedMetadata, target);
     };
 }

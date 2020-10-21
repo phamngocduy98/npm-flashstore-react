@@ -1,4 +1,4 @@
-import {firebase} from "../FirebaseImport";
+import {firebase} from "../internal";
 
 export class DocumentReferenceArrays extends Array<firebase.firestore.DocumentReference> {
     static includes(
