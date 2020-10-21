@@ -1,6 +1,5 @@
-import {firebase} from "../FirebaseImport";
-
 import {
+    firebase,
     Database,
     DocumentChangedEvents,
     DocumentData,
@@ -8,7 +7,7 @@ import {
     FirestoreCollection,
     ICollectionParent,
     RealtimeFirestoreDocument
-} from "../internal";
+} from "../../internal";
 
 /**
  * RealtimeFirestoreCollection class for Flashstore Library

@@ -1,5 +1,4 @@
-import {firebase} from "./FirebaseImport";
-import {ICollectionParent} from "./internal";
+import {firebase, ICollectionParent} from "../internal";
 
 /**
  * Database class for Flashstore Library

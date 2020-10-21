@@ -1,9 +1,6 @@
 import EventEmitter from "events";
 
-import {firebase} from "../FirebaseImport";
-
-import {DocumentData, FirestoreCollection, FirestoreDocument} from "../internal";
-import {FDUnionArray} from "./FDUnionArray";
+import {firebase, DocumentData, FirestoreCollection, FirestoreDocument, FDUnionArray} from "./internal";
 
 /**
  * FDArrayTracker class for Flashstore Library

@@ -1,6 +1,5 @@
 import {useCallback, useEffect, useState} from "react";
-import {DocumentData, FirestoreCollection, FirestoreDocument} from "..";
-import {arrayNullUndefinedFilter} from "./miscellaneous";
+import {DocumentData, FirestoreCollection, FirestoreDocument, arrayNullUndefinedFilter} from "./core/internal";
 
 export type RefreshCallback = () => {};
 

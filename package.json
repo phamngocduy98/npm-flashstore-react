@@ -1,6 +1,6 @@
 {
   "name": "@phamngocduy98/flashstore-react",
-  "version": "0.0.1b",
+  "version": "0.0.1c",
   "description": "A firebase cloud firestore library that making it easier to CRUD data with typescript in react client",
   "repository": "https://github.com/phamngocduy98/npm-flashstore-react",
   "author": "Pham Ngoc Duy",
@@ -18,23 +18,31 @@
     "coverage": "nyc --reporter=lcov --reporter=text-summary mocha --exit --require ts-node/register ./test/**/*.ts",
     "codecov": "codecov",
     "tslint": "tslint --project . src/**/*.ts ./test/**/*.ts",
+    "eslint": "eslint -c .eslintrc.js --ext .ts src/**/*.ts ./test/**/*.ts",
     "prettier-check": "prettier --check src/**/*.ts ./test/**/*.ts",
     "prettier": "prettier --write src/**/*.ts ./test/**/*.ts",
     "types-check": "tsc --project . --noEmit --pretty --skipLibCheck",
     "build": "tsc -b prod.tsconfig.json",
     "npm_publish": "npm publish --access public"
   },
+  "peerDependencies": {
+    "react": ">=16"
+  },
   "dependencies": {
-    "@types/react": "^16.9.53",
-    "firebase": "^7.19.1",
-    "react": "~16.14.0"
+    "firebase": "^7.19.1"
   },
   "devDependencies": {
+    "react": "^16.14.0",
+    "@types/react": "^16.9.53",
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
     "chai": "^4.2.0",
     "codecov": "^3.7.2",
     "dotenv": "^8.2.0",
+    "eslint": "^7.11.0",
     "mocha": "^8.1.3",
     "nyc": "^15.1.0",
     "prettier": "^2.1.1",
