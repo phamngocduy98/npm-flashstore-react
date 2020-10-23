@@ -2,6 +2,7 @@ import {expect} from "chai";
 import {db} from "../index";
 
 describe("Firestore Collection tests", function () {
+    this.timeout(10000);
     it("get collection documents", async () => {
         let usersData = await db.users.get();
         console.info(usersData);

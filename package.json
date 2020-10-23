@@ -1,6 +1,6 @@
 {
   "name": "@phamngocduy98/flashstore-react",
-  "version": "0.0.1c",
+  "version": "0.0.1-alpha.0",
   "description": "A firebase cloud firestore library that making it easier to CRUD data with typescript in react client",
   "repository": "https://github.com/phamngocduy98/npm-flashstore-react",
   "author": "Pham Ngoc Duy",
@@ -26,13 +26,12 @@
     "npm_publish": "npm publish --access public"
   },
   "peerDependencies": {
-    "react": ">=16"
-  },
-  "dependencies": {
-    "firebase": "^7.19.1"
+    "react": ">=16",
+    "firebase": ">=7.19.1"
   },
   "devDependencies": {
     "react": "^16.14.0",
+    "firebase": "^7.19.1",
     "@types/react": "^16.9.53",
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",

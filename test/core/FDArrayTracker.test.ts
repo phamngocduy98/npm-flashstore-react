@@ -3,6 +3,7 @@ import {OnArrayChangedListener} from "../../src/core/internal";
 import {db} from "../index";
 
 describe("FDArrayTracker tests", function () {
+    this.timeout(10000);
     it("Linked Document Array: onUserArrayChangedListener.onItemInserted", (done) => {
         let newlyAddedUserId = "newlyAdded";
         let testVillage = db.villages.document("test_village");
