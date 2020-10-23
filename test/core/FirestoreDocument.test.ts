@@ -56,6 +56,7 @@ describe("Firebase Document tests", function () {
         await userDoc.set(newUserData);
         const userData = await userDoc.get();
         expect(userData).not.null;
+        expect(userData!._id).equal("user_test");
         expect(userData!.name).equal(newUserData.name);
         expect(userData!.avatarUrl).equal(newUserData.avatarUrl);
     });
