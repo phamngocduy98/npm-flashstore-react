@@ -26,10 +26,8 @@
     "npm_publish": "npm publish --access public"
   },
   "peerDependencies": {
-    "react": ">=16"
-  },
-  "dependencies": {
-    "firebase": "^7.19.1"
+    "react": ">=16",
+    "firebase": ">=7.19.1"
   },
   "devDependencies": {
     "react": "^16.14.0",
