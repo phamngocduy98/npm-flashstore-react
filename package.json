@@ -1,6 +1,6 @@
 {
   "name": "@phamngocduy98/flashstore-react",
-  "version": "0.0.1c",
+  "version": "0.0.1-alpha.0",
   "description": "A firebase cloud firestore library that making it easier to CRUD data with typescript in react client",
   "repository": "https://github.com/phamngocduy98/npm-flashstore-react",
   "author": "Pham Ngoc Duy",
